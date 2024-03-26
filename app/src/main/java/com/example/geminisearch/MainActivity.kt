@@ -1,5 +1,7 @@
 package com.example.geminisearch
 
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,6 +18,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
             GeminiSearchTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -27,5 +30,5 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
+}
 
