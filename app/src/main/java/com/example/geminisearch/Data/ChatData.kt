@@ -6,6 +6,7 @@ import com.google.ai.client.generativeai.type.ResponseStoppedException
 import com.google.ai.client.generativeai.type.content
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 object ChatData {
     val apiKey = "AIzaSyBByxYhe7D_CWbCyrbPiBn3g4XfCo3bznE"
@@ -25,7 +26,7 @@ object ChatData {
                 isFromUser = false
             )
 
-        }catch (e: ResponseStoppedException){
+        }catch (e: Exception){
             return Chat(
                 prompt = e.message ?: "error",
                 bitmap = null,
@@ -55,7 +56,7 @@ object ChatData {
                 isFromUser = false
             )
 
-        }catch (e: ResponseStoppedException){
+        }catch (e: Exception){
             return Chat(
                 prompt = e.message ?: "error",
                 bitmap = null,
