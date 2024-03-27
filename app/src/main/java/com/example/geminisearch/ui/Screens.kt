@@ -52,6 +52,7 @@ import com.example.geminisearch.ChatUiEvent
 import com.example.geminisearch.ChatViewModel
 import com.example.geminisearch.R
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.update
 
 
 @Composable
@@ -168,6 +169,7 @@ fun ChatScreen(paddingValues: PaddingValues,
                     .size(40.dp)
                     .clickable {
                         chatViewModel.onEvent(ChatUiEvent.SendPrompt(chatState.prompt,bitmap))
+                        uriState.update { "" }
                     },
                 imageVector = Icons.Rounded.Send,
                 contentDescription ="send prompt",
