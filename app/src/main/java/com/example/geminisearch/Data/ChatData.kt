@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 
 object ChatData {
     val apiKey = "AIzaSyBByxYhe7D_CWbCyrbPiBn3g4XfCo3bznE"
-    suspend fun getResponse(prompt : String) : Chat{
+    suspend fun getResponseWithImage(prompt : String) : Chat{
         val generativeModel = GenerativeModel(
             modelName = "gemini-pro",
             apiKey = apiKey
@@ -34,7 +34,7 @@ object ChatData {
         }
     }
 
-    suspend fun getResponse(prompt : String, bitmap : Bitmap) : Chat{
+    suspend fun getResponseWithImage(prompt : String, bitmap : Bitmap) : Chat{
         val generativeModel = GenerativeModel(
             modelName = "gemini-pro-vision",
             apiKey = apiKey

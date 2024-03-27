@@ -21,10 +21,11 @@ class ChatViewModel : ViewModel() {
                     addPrompt(event.prompt,event.bitmap)
 
                     if (event.bitmap !=null){
+                        getResponseImage(event.prompt,event.bitmap)
 
                     }
                     else{
-
+                        getResponse(event.prompt)
                     }
                 }
             }
@@ -48,7 +49,7 @@ class ChatViewModel : ViewModel() {
     }
     private fun getResponse(prompt : String){
         viewModelScope.launch {
-            val chat = ChatData.getResponse(prompt)
+            val chat = ChatData.getResponseWithImage(prompt)
             _chatState.update {
                 it.copy(
                     chatList = it.chatList.toMutableList().apply {
@@ -61,7 +62,7 @@ class ChatViewModel : ViewModel() {
 
     private fun getResponseImage(prompt : String,bitmap: Bitmap){
         viewModelScope.launch {
-            val chat = ChatData.getResponse(prompt,bitmap)
+            val chat = ChatData.getResponseWithImage(prompt,bitmap)
             _chatState.update {
                 it.copy(
                     chatList = it.chatList.toMutableList().apply {
