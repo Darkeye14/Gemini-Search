@@ -125,7 +125,6 @@ fun ChatScreen(paddingValues: PaddingValues,
                 bitmap?.let {
                     Image(
                         modifier = Modifier
-                            .fillMaxWidth()
                             .size(40.dp)
                             .padding(bottom = 4.dp)
                             .clip(RoundedCornerShape(6.dp)),
