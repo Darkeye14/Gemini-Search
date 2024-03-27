@@ -121,12 +121,12 @@ fun ChatScreen(paddingValues: PaddingValues,
             .padding(bottom = 16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Column() {
+            Column {
                 bitmap?.let {
                     Image(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(40.dp)
+                            .size(40.dp)
                             .padding(bottom = 4.dp)
                             .clip(RoundedCornerShape(6.dp)),
                         contentScale = ContentScale.Crop,
@@ -152,7 +152,9 @@ fun ChatScreen(paddingValues: PaddingValues,
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))
-            TextField(value = chatState.prompt,
+            TextField(modifier = Modifier
+                .weight(1f),
+                value = chatState.prompt,
                 onValueChange ={
                     chatViewModel.onEvent(ChatUiEvent.UpdatePrompt(it))
                 },
