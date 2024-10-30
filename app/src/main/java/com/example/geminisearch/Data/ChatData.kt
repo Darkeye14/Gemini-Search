@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 import java.lang.Exception
 
 object ChatData {
-    val apiKey = "AIzaSyBByxYhe7D_CWbCyrbPiBn3g4XfCo3bznE"
+    val apiKey = "STORED_IN_WHATSAPP"
     suspend fun getResponseWithImage(prompt : String) : Chat{
         val generativeModel = GenerativeModel(
             modelName = "gemini-pro",
